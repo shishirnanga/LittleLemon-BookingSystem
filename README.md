@@ -4,16 +4,16 @@ This project implements a booking system for Little Lemon restaurant using MySQL
 
 ## Project Components
 
-✅ ER Diagram showing the data model (see `ER_Diagram.png`)  
-✅ MySQL database schema in `LittleLemon_Database.sql`  
-✅ Stored procedures in `Procedures.sql`:  
+ER Diagram showing the data model (see `ER_Diagram.png`)  
+MySQL database schema in `LittleLemon_Database.sql`  
+Stored procedures in `Procedures.sql`:  
 - GetMaxQuantity()
 - ManageBooking()
 - UpdateBooking()
 - AddBooking()
 - CancelBooking()  
-✅ Tableau workbook `Tableau_Workbook.twb` for analyzing booking data  
-✅ Screenshots of database, queries, and Tableau charts in `/screenshots/`
+Tableau workbook `Tableau_Workbook.twb` for analyzing booking data  
+Screenshots of database, queries, and Tableau charts in `/screenshots/`
 
 ## Steps Implemented
 

@@ -8,11 +8,23 @@ DELIMITER ;
 
 -- ManageBooking procedure
 DELIMITER //
-CREATE PROCEDURE ManageBooking(IN booking_id INT)
+
+CREATE PROCEDURE ManageBooking(IN cust_name VARCHAR(100), IN book_date DATE, IN book_time TIME, IN table_num INT, IN guests INT)
 BEGIN
-    SELECT * FROM Bookings WHERE BookingID = booking_id;
-END;
-//
+    DECLARE count_existing INT;
+    SELECT COUNT(*) INTO count_existing
+    FROM Bookings
+    WHERE TableNumber = table_num AND BookingDate = book_date AND BookingTime = book_time;
+
+    IF count_existing = 0 THEN
+        INSERT INTO Bookings (CustomerName, BookingDate, BookingTime, TableNumber, Guests)
+        VALUES (cust_name, book_date, book_time, table_num, guests);
+        SELECT 'Booking successful.' AS Message;
+    ELSE
+        SELECT 'Table already booked.' AS Message;
+    END IF;
+END //
+
 DELIMITER ;
 
 -- UpdateBooking procedure
